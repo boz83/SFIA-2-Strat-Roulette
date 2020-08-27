@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+    service-1:
+        build:
+            context: ./service-1
+            dockerfile: Dockerfile
+        image: steve/service-1
+        ports:
+        - target: 5000
+          published: 5000
+    service-4:
+        build:
+            context: ./service-4
+            dockerfile: Dockerfile
+        image: steve/service-4
+        ports:
+        - target: 5001
+          published: 5001

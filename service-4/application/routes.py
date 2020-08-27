@@ -11,6 +11,6 @@ def home():
 
 @app.route('/generate_strat', methods=['GET', 'POST'])
 def generate_strat():
-  map = requests.get('http://service-2:5001/get_map')
-  strat = requests.get('http://service-3:5002/get_strat')
+  map = requests.get('http://service-1:5001/get_map')
+  strat = requests.get('http://service-2:5002/get_strat')
   return render_template('strat.html', map_name = map.text, strategy=strat.text, title='Strategy')

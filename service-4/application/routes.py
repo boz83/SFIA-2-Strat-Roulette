@@ -11,5 +11,5 @@ def home():
 
 @app.route('/generate_strat', methods=['GET', 'POST'])
 def generate_map():
-  map = requests.get('http://10.154.0.15:5001/get_map')
+  map = requests.get('http://34.105.142.187:5001/get_map')
   return render_template('strat.html', map_name = map.text)

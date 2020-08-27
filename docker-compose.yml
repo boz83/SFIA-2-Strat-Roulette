@@ -8,6 +8,14 @@ services:
         ports:
         - target: 5001
           published: 5001
+    service-2:
+        build:
+            context: ./service-2
+            dockerfile: Dockerfile
+        image: steve/service-2
+        ports:
+        - target: 5002
+          published: 5002
     service-4:
         build:
             context: ./service-4

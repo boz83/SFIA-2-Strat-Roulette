@@ -14,11 +14,8 @@ def home():
 def generate_strat():
   map = requests.get('http://service-1:5001/get_map')
   strat = requests.get('http://service-2:5002/get_strat')
-  rule = requests.get('http://service-3:5003/get_rule', data=map.text)
-
+  rule = requests.post('http://service-3:5003/get_rule', data=map)
   db_data = Strategys(map=map.text, strategy=strat.text, rule=rule.text)
   db.session.add(db_data)
   db.session.commit()
-
-
   return render_template('strat.html', map_name = map.text, strategy=strat.text, rule=rule.text, title='Strategy')

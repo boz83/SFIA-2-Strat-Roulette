@@ -2,7 +2,16 @@
 {% block body_content %}
 <div>
 	<h2>CSGO Strat Roulette</h2>
-	<p>This is your strat</p>
+  <p>These are the starts that have been generated already:</p>
+  {% if strats %}
+  {% for strat in strats %}
+    <div>
+      <p><strong>{{ strats.map }}</strong></p>
+      <p>
+        - Strategy: {{ strats.strategy }}
+        - Rule: {{ strats.rule }}
+      </p>
+    </div>
 	<br><br><br>
 	<button type="button"><a href="{{ url_for('generate_strat') }}">Click here for a strat</a></button>
 </div>

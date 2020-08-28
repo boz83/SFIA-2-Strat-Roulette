@@ -66,3 +66,13 @@ class TestService3(TestBase):
             url_for('get_rule'),
             data='Cache')
         self.assertIn(b'Clay Pigeon Shooting: Everyone buys a shotgun and must yell "PULL" whenever you fire at an enemy', response.data)
+  
+  def test_map_rule6(self):
+    with patch('requests.get') as g:
+      g.return_value.text = 'Vertigo'
+      with patch('random.randrange') as r:
+        r.return_value = 0
+        response = self.client.post(
+            url_for('get_rule'),
+            data='Vertigo')
+        self.assertIn(b'This is not a map in the active duty pool',response.data)

@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
 {% block body_content %}
 <div>
-	<h2>CSGO Strat Roulette</h2>
+  <h2>CSGO Strat Roulette</h2>
+  <button type="button"><a href="{{ url_for('generate_strat') }}">Click here to generate a new strat</a></button>
   <p>These are the starts that have been generated already:</p>
   {% for strat in strats %}
     <div>
-      <p><strong>{{ strats.map }}</strong></p>
+      <p><strong>{{ strat.map }}</strong></p>
       <p>
         - Strategy: {{ strat.strategy }}
         <br>
@@ -13,7 +14,5 @@
       </p>
     </div>
     {% endfor %}
-	<br><br>
-	<button type="button"><a href="{{ url_for('generate_strat') }}">Click here for a strat</a></button>
 </div>
 {% endblock %}

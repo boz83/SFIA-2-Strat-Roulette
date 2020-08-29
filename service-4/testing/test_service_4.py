@@ -37,7 +37,7 @@ class TestService4(TestBase):
   def test_view_new_strategy(self):
     response = self.client.get(url_for("generated_strats"))
     self.assertEqual(response.status_code, 200)
-    self.assertIn(b"Map:", response.data)
-    self.assertIn(b"Strategy:", response.data)
-    self.assertIn(b"Rule:", response.data)
+    self.assertIn(b"Cache", response.data)
+    self.assertIn(b"Mid Rush", response.data)
+    self.assertIn(b"Clay Pigeon Shooting: Everyone buys a shotgun and must yell "PULL" whenever you fire at an enemy", response.data)
   

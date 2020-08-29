@@ -39,5 +39,5 @@ class TestService4(TestBase):
     self.assertEqual(response.status_code, 200)
     self.assertIn(b"Cache", response.data)
     self.assertIn(b"Mid Rush", response.data)
-    self.assertIn(b"Clay Pigeon Shooting: Everyone buys a shotgun and must yell "PULL" whenever you fire at an enemy", response.data)
+    self.assertIn(b'Clay Pigeon Shooting: Everyone buys a shotgun and must yell "PULL" whenever you fire at an enemy', response.data)
   

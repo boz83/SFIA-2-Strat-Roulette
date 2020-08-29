@@ -24,7 +24,7 @@ class TestBase(TestCase):
     db.session.add(testStrategy)
     db.session.commit()
 
-   def tearDown(self):
+  def tearDown(self):
     db.session.remove()
     db.drop_all()
 
@@ -44,5 +44,4 @@ class TestService4(TestBase):
         self.assertIn(b"Map:", response.data)
         self.assertIn(b"Strategy:", response.data)
         self.assertIn(b"Rule:", response.data)
-  
   

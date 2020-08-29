@@ -5,9 +5,8 @@ import requests
 
 @app.route('/')
 @app.route('/home')
-def home():
-  stratData=Strategys.query.all()
-  return render_template('home.html', title='Home', strats=stratData)
+def home(): 
+  return render_template('home.html', title='Home')
 
 
 @app.route('/generate_strat', methods=['GET', 'POST'])
@@ -19,3 +18,9 @@ def generate_strat():
   db.session.add(db_data)
   db.session.commit()
   return render_template('strat.html', map_name = map.text, strategy=strat.text, rule=rule.text, title='Strategy')
+
+
+@app.route('/generated_strats')
+def generated_strats():
+  stratData=Strategys.query.all()
+  return render_template('all_strategys.html',title='Past Strategys',strats=stratData)

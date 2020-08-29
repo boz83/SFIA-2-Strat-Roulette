@@ -40,8 +40,8 @@ class TestService4(TestBase):
   
   def test_view_new_strategy(self):
     response = self.client.get(url_for("generate_view"))
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Map:", response.data)
-        self.assertIn(b"Strategy:", response.data)
-        self.assertIn(b"Rule:", response.data)
+      self.assertEqual(response.status_code, 200)
+      self.assertIn(b"Map:", response.data)
+      self.assertIn(b"Strategy:", response.data)
+      self.assertIn(b"Rule:", response.data)
   

@@ -1,9 +1,3 @@
-- name: 'Pull master repo'
-  git:
-    repo: https://github.com/boz83/SFIA-2-Strat-Roulette.git
-    clone: no
-    update: yes
-
 - name: 'Initialise docker swarm'
   docker_swarm:
     state: present

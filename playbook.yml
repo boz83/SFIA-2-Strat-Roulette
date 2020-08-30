@@ -1,0 +1,19 @@
+- hosts: dockernodes
+  become: yes
+  roles:
+  - role: docker
+  - role: compose
+
+- hosts: manager
+  become: yes
+  roles:
+  - role: docker
+  - role: manager
+
+- hosts: worker
+  become: yes
+  roles:
+  - role: docker
+  - role: worker
+    vars:
+      token: "{{ hostvars['join_token']['value']['stdout'] }}"

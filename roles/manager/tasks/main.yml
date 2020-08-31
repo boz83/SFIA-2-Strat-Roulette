@@ -6,15 +6,15 @@
   pip:
     name: docker
 
-- name: 'Initialise docker swarm'
+- name: Initialise docker swarm
   docker_swarm:
     state: present
 
-- name: 'get swarm worker token'
+- name: get swarm worker token
   shell: docker swarm join-token -q worker
   register: worker_token
 
-- name: 'host'
+- name: host
   add_host:
     name: 'join_token'
     value: '{{ worker_token }}'

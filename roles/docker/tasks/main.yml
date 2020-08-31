@@ -1,4 +1,4 @@
-- name: 'apt package installs'
+- name: apt package installs
   apt:
     pkg:
     - python3
@@ -11,21 +11,21 @@
     state: latest
     update_cache: true
 
-- name: 'add GPG key'
+- name: add GPG key
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
-- name: 'Add repo'
+- name: Add repo
   apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
     state: present
 
-- name: 'update repo'
+- name: update repo
   apt:
     upgrade: dist
 
-- name: 'install docker'
+- name: install docker
   apt:
     pkg:
     - docker-ce
@@ -34,6 +34,6 @@
     state: latest
     update_cache: true
 
-- name: 'Install docker-py'
+- name: Install docker-py
   pip:
     name: docker-py

@@ -1,9 +1,9 @@
-- name: 'Leave a swarm if already part of one'
+- name: Leave a swarm if already part of one
   docker_swarm:
     state: absent
     force: true
 
-- name: 'Join worker to swarm'
+- name: Join worker to swarm
   docker_swarm:
     state: join
     advertise_addr: worker

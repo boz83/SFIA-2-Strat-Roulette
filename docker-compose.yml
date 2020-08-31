@@ -2,6 +2,8 @@ version: '3.7'
 services:
     nginx:
       image: nginx:latest
+      deploy:
+          replicas: 2
       ports:
         - target: 80
           published: 80
@@ -15,6 +17,8 @@ services:
             context: ./service-1
             dockerfile: Dockerfile
         image: smtb98/service-1
+        deploy:
+            replicas: 2
         ports:
         - target: 5001
           published: 5001
@@ -23,6 +27,8 @@ services:
             context: ./service-2
             dockerfile: Dockerfile
         image: smtb98/service-2
+        deploy:
+            replicas: 2
         ports:
         - target: 5002
           published: 5002
@@ -31,6 +37,8 @@ services:
             context: ./service-3
             dockerfile: Dockerfile
         image: smtb98/service-3
+        deploy:
+            replicas: 2
         ports:
         - target: 5003
           published: 5003
@@ -39,8 +47,11 @@ services:
             context: ./service-4
             dockerfile: Dockerfile
         image: smtb98/service-4
+        deploy:
+            replicas: 2
         ports:
         - target: 5000
           published: 5000
         environment:
           DATABASE_URI: ${DATABASE_URI}
+          TEST_DB_URI: ${TEST_DB_URI}

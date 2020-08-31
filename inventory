@@ -1,0 +1,24 @@
+[manager]
+manager1
+
+[manager:vars]
+ansible_user=smtbore
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[worker]
+worker1
+
+[worker:vars]
+ansible_user=smtbore
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[docker]
+manager1
+worker1
+
+[docker:vars]
+ansible_user=smtbore
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_private_key_file=~/.ssh/id_rsa

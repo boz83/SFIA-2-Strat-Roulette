@@ -1,0 +1,11 @@
+- name: Leave a swarm if already part of one
+  docker_swarm:
+    state: absent
+    force: true
+
+- name: Join worker to swarm
+  docker_swarm:
+    state: join
+    advertise_addr: worker
+    join_token: "{{ join_token }}"
+    remote_addrs: [ '35.189.91.96:2377' ]

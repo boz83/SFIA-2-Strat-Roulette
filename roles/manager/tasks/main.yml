@@ -10,7 +10,7 @@
   docker_swarm:
     state: present
 
-- name: swarm worker token
+- name: get swarm worker token
   shell: docker swarm join-token -q worker
   register: worker_token
 

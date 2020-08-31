@@ -17,3 +17,4 @@
   - role: worker
     vars:
       token: "{{ hostvars['join_token']['value']['stdout'] }}"
+      

@@ -1,8 +1,7 @@
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt install -y python3 python3-pip
-mkdir -p ~/.local/bin
-echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
-source ~/.bashrc
-pip install --user ansible
-ansible --version
+#! /bin/bash
+sudo chmod 666 /var/run/docker.sock
+
+docker-compose down --rmi all
+docker-compose build
+sudo docker login
+sudo docker-compose push

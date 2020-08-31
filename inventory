@@ -1,4 +1,4 @@
-[manager]
+[manager1]
 manager
 
 [manager:vars]
@@ -6,7 +6,7 @@ ansible_user=smtbore
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/id_rsa
 
-[worker]
+[worker1]
 worker
 
 [worker:vars]

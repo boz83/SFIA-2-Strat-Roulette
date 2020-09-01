@@ -1,11 +1,11 @@
-- name: Leave a swarm if already part of one
-  docker_swarm:
-    state: absent
-    force: true
+- name: install pip
+  apt:
+    name: python3-pip
 
-- name: Join worker to swarm
-  docker_swarm:
-    state: join
-    advertise_addr: worker
-    join_token: "{{ join_token }}"
-    remote_addrs: [ '35.189.91.96:2377' ]
+- name: Install docker with pip
+  pip:
+    name: docker
+
+- name: Add node
+  shell: docker swarm join --token {{ hostvars['swarmkey']['value'] }}
+  ignore_errors: true 

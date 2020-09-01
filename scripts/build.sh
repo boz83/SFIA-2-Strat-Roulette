@@ -1,7 +1,6 @@
-#! /bin/bash
-sudo chmod 666 /var/run/docker.sock
-
+export DATABASE_URI="${DATABASE_URI}"
+export TEST_DB_URI="${TEST_DB_URI}"
 docker-compose down --rmi all
 docker-compose build
-sudo docker login
-sudo docker-compose push
+docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+docker-compose push

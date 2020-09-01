@@ -1,22 +1,25 @@
 #! /bin/bash
-export TEST_SECRET_KEY=${TEST_SECRET_KEY} 
-export TEST_DATABASE_URI=${TEST_DATABASE_URI} 
-
-cd ./service1
+cd SFIA-2-Strat-Roulette
+cd service-1
+python3 -m venv venv
+. venv/bin/activate
 pip3 install -r requirements.txt
-python3 -m pytest --cov=application 
+pip3 install pytest-cov
+pip3 install flask_testing
+python3 -m pytest --cov application --cov-report term-missing
 cd ..
 
-cd ./service2
-python3 -m pytest --cov=application
+cd service-2
+pip3 install -r requirements.txt
+python3 -m pytest --cov application --cov-report term-missing
 cd ..
 
-
-cd ./service3
-python3 -m pytest --cov=application
+cd service-3
+pip3 install -r requirements.txt
+python3 -m pytest --cov application --cov-report term-missing
 cd ..
 
-
-cd ./service4
-python3 -m pytest --cov=application
+cd service-4
+pip3 install -r requirements.txt
+python3 -m pytest --cov application --cov-report term-missing
 cd ..

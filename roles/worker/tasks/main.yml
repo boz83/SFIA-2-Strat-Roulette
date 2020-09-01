@@ -1,0 +1,11 @@
+- name: install pip
+  apt:
+    name: python3-pip
+
+- name: Install docker with pip
+  pip:
+    name: docker
+
+- name: Add node
+  shell: docker swarm join --token {{ hostvars['swarmkey']['value'] }}
+  ignore_errors: true 

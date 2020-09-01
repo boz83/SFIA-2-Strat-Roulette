@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+<div>
+  <h2>All Previous Strats</h2>
+  {% for strat in strats %}
+  <div>
+    <p><strong>{{ strat.map }}</strong></p>
+    <p>
+      - Strategy: {{ strat.strategy }}
+      <br>
+      - Rule: {{ strat.rule }}
+    </p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

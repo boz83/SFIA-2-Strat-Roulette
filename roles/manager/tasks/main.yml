@@ -1,0 +1,21 @@
+- name: Initialise Swarm
+  docker_swarm:
+    state: present
+
+- name: Get Host
+  shell: hostname
+  register: managerhost
+
+- name: Worker token
+  shell: docker swarm join-token worker
+  register: swarmkey
+
+- name: manager hostname
+  add_host:
+    name: "managerhost"
+    value: "{{ managerhost.stdout }}"
+
+- name: Get worker token
+  add_host:
+    name: "swarmkey"
+    value: "{{ swarmkey.stdout }}"

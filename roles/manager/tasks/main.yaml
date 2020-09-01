@@ -4,18 +4,18 @@
 
 - name: Get Host
   shell: hostname
-  register: managerhost
+  register: managerhostname
 
-- name: Worker swarmkey
+- name: Worker token
   shell: docker swarm join-token worker
-  register: swarmkey
+  register: token
 
 - name: Get manager hostname
   add_host:
-    name: "managerhost"
-    value: "{{ managerhost.stdout }}"
+    name: "managerhostname"
+    value: "{{ managerhostname.stdout }}"
 
 - name: Get worker token
   add_host:
-    name: "swarmkey"
-    value: "{{ swarmkey.stdout }}"
+    name: "token"
+    value: "{{ token.stdout }}"

@@ -55,7 +55,7 @@ This project will have a database used. For every
 ![alt text](README_Assets/erd.PNG)
 ## CI Pipleine
 Using Jenkins, every new commit to the master branch of the application repository will trigger a new build by the Jenkins server. This new build will be tested and, provided the new build passes the tests, built in order to be deployed to the host machines.
-![alt text](README_Assets/CI_pipeline.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/CI_pipeline.png)
 This diagram illustrates every step in the CI pipeline with all technologies incorporated for the application to be deployed successfully.
 ## Deployment
 Using Docker and Ansible, the application will be deployed automatically to multiple host VM's. Ansible will be used to provision each machine in the docker swarm with the required processes to host the application within docker swarm. Docker will be used to build a new image of the containers and push it to dockerhub. These latest versions will then be pulled down every time the application is built

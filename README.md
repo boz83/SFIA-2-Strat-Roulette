@@ -48,11 +48,11 @@ These “Objects” can be from whatever domain you wish.
 - Docker & Docker swarm for containerisation and orchestration of the application across multiple host VM's
 - Ansible for the automatic provisioning of each host VM with the requirements to allow the application to run
 - NGINX web server used as the reverse proxy to allow the user to access the application online as well as load balancer for docker swarm nodes
-![alt text](README_Assets/infrastructure_design.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/infrastructure_design.png)
 This is a basic infrastructure flow of how the app will go from version control system to deployment
 ## Database ERD
 This project will have a database used. For every 
-![alt text](README_Assets/erd.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/erd.png)
 ## CI Pipleine
 Using Jenkins, every new commit to the master branch of the application repository will trigger a new build by the Jenkins server. This new build will be tested and, provided the new build passes the tests, built in order to be deployed to the host machines.
 ![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/CI_pipeline.png)
@@ -75,7 +75,7 @@ These 2 images show that I have used the Jira software GitHub integration. When 
 # Risk Assessment
 In order to plan for possible issues that could be encountered during the development lifecycle of this project, a risk assessments have been undertaken. This was undertaken before the project began to ensure all major possible issues could be accounted for and preventive measures put in place.
 
-![alt text](README_Assets/risk_assessment.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/risk_assessment.png)
 
 # Testing
 In order to ensure the application works as expected, rigorous testing will be undertaken before each build of the application is deployed. 
@@ -89,13 +89,13 @@ Every time development is to be merged into the master branch, a full pull reque
 
 **Pytest**
 Pytest is a form of unit testing that will be undertaken to test the code of each service (unit) within the application. These tests will generate a coverage report and the minimum overall coverage required is 75% for each of the 4 services. 
-![alt text](README_Assets/test_result_service_1.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/test_result_service_1.png)
 Service 1 Test Results. 100% test coverage for first API
-![alt text](README_Assets/test_result_service_2.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/test_result_service_2.png)
 Service 2 Test Results. 100% test coverage for second api
-![alt text](README_Assets/test_result_service_3.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/test_result_service_3.png)
 Service 3 Test Results. 100% test coverage for third api
-![alt text](README_Assets/test_result_service_4.PNG)
+![alt text](https://raw.githubusercontent.com/boz83/SFIA-2-Strat-Roulette/master/README_Assests/test_result_service_4.png)
 Service 4 Test Results. Overall 79% test coverage for service 4: database is tested but the posting of database data within the view (all_strategys page).
 
 

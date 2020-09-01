@@ -6,11 +6,11 @@
   shell: hostname
   register: managerhost
 
-- name: Worker token
+- name: Worker swarmkey
   shell: docker swarm join-token worker
   register: swarmkey
 
-- name: manager hostname
+- name: Get manager hostname
   add_host:
     name: "managerhost"
     value: "{{ managerhost.stdout }}"

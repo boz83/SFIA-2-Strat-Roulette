@@ -8,4 +8,4 @@
 
 - name: Add node
   shell: docker swarm join --token {{ hostvars['swarmkey']['value'] }}
-  ignore_errors: true 
+  ignore_errors: true    

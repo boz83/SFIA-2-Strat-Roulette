@@ -3,11 +3,6 @@
   roles:
     - docker
 
-- hosts: manager
-  become: true
-  roles:
-    - manager
-
 - hosts: worker
   become: true
   roles:

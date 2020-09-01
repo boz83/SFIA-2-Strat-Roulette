@@ -1,21 +1,3 @@
 - name: Initialise Swarm
   docker_swarm:
     state: present
-
-- name: Get Host
-  shell: hostname
-  register: managerhostname
-
-- name: Worker token
-  shell: docker swarm join-token worker
-  register: token
-
-- name: Get manager hostname
-  add_host:
-    name: "managerhostname"
-    value: "{{ managerhostname.stdout }}"
-
-- name: Get worker token
-  add_host:
-    name: "token"
-    value: "{{ token.stdout }}"

@@ -1,11 +1,6 @@
-- name: install pip
-  apt:
-    name: python3-pip
-
-- name: Install docker with pip
-  pip:
-    name: docker
-
-- name: Add node
-  shell: docker swarm join --token {{ hostvars['token']['value'] }}
-  ignore_errors: true    
+- name: Add nodes
+  docker_swarm:
+    state: join
+    advertise_addr: worker:2377
+    join_token: SWMTKN-1-1darygmncrn0t046twhgouow35vjdvbbfr16uthjnm8w8t6lz6-9zq7homibo5t9z4txr0yf4m0y
+    remote_addrs: [ 'manager:2377' ]
